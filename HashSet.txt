@@ -1,0 +1,66 @@
+package SetInJava;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+public class HashSetEx 
+{
+	public static void main(String args[]) {
+	     
+	      HashSet hset =  new HashSet();
+
+	     
+	      System.out.println(hset.add("One"));
+	      System.out.println(hset.add("Two"));
+	      System.out.println(hset.add("Three"));
+	      System.out.println(hset.add("Four"));
+	      System.out.println(hset.add("Five"));
+	     
+	      System.out.println(hset.add("One"));
+	      System.out.println(hset.add("Three"));
+	      System.out.println(hset.add(10));
+	      System.out.println(hset.add(null));
+	      System.out.println(hset.add(null));
+
+	     /*System.out.println("null".hashCode());
+	      System.out.println(hset);
+	      
+	      String a = "200";
+	        String b = "200";
+
+	        if(a.equals(b)){
+	            System.out.println("Equal variables:");
+	            System.out.println(a.hashCode() + "\n" + b.hashCode());
+	        }
+
+	        String c = "10";
+	        String d = "50";
+
+	        if(!c.equals(d)){
+	            System.out.println("\nUn-equal variables:");
+	            System.out.println(c.hashCode() + "\n" + d.hashCode());
+	        }*/
+	      
+	      LinkedHashSet linkedHset =  new LinkedHashSet();
+
+		     
+	      System.out.println(linkedHset.add("One"));
+	      System.out.println(linkedHset.add("Two"));
+	      System.out.println(linkedHset.add("Three"));
+	      System.out.println(linkedHset.add("Four"));
+	      System.out.println(linkedHset.add("Five"));
+	     
+	      System.out.println(linkedHset.add("One"));
+	      System.out.println(linkedHset.add("Three"));
+	      System.out.println(linkedHset.add(10));
+	      System.out.println(linkedHset.add(null));
+	      System.out.println(linkedHset.add(null));
+	      
+	      
+	      System.out.println("Hash Set Output");
+	      System.out.println(hset);
+	      System.out.println("\nLinkedHash Set Output");
+	      System.out.println(linkedHset);
+	    }
+
+}

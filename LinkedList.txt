@@ -1,0 +1,156 @@
+package LinkedListEx;
+
+public class NodeClass 
+{
+	int data;
+	NodeClass next;
+}
+
+package LinkedListEx;
+
+public class CreateList 
+{
+	NodeClass head;
+	
+	public void insert(int data)
+	{
+		NodeClass node = new NodeClass();
+		node.data = data;
+		node.next = null;
+		
+		if(head==null)
+		{
+			head = node;
+		}
+		else
+		{
+			NodeClass n = head;
+			while(n.next!=null)
+			{
+				n = n.next;
+			}
+			n.next =  node;
+		}
+		
+	}
+	public void insertAtStart(int data)
+	{
+		NodeClass node = new NodeClass();
+		node.data = data;
+		node.next = null;
+		node.next = head;
+		head = node;
+	}
+	
+	public void insertAt(int index,int data)
+	{
+		NodeClass node = new NodeClass();
+		node.data = data;
+		node.next = null;
+		
+		if(index==0)
+		{
+			insertAtStart(data);
+		}
+		else{
+		NodeClass n = head;
+		for(int i=0;i<index-1;i++)
+		{
+			n = n.next;
+		}
+		node.next = n.next;
+		n.next = node;
+		}
+	}
+	
+	public void deleteAt(int index)
+	{
+		if(index==0)
+		{
+			head = head.next;
+		}
+		else
+		{
+			NodeClass n = head;
+			NodeClass n1 = null;
+			for(int i=0;i<index-1;i++)
+			{
+				n = n.next;
+			}
+			n1 = n.next;
+			n.next = n1.next;
+			//System.out.println("n1 " + n1.data);
+			n1 = null;
+		}
+		
+	}
+	
+	public void show()
+	{
+		NodeClass node = head;
+		
+		while(node.next!=null)
+		{
+			System.out.print(node.data+" -> ");
+			node = node.next;
+		}
+		System.out.println(node.data);
+		/*System.out.println("\nUsing Loop");
+		NodeClass node2 = null;
+		node2 =head;
+		while(node2 != null)
+		{
+			System.out.println(node2.data);
+		}*/
+	}
+	
+	
+
+}
+
+package LinkedListEx;
+
+import java.util.LinkedList;
+import java.util.*;
+public class LinkedListRunner 
+{
+	static int choice;
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		
+		CreateList list = new CreateList();
+	
+		System.out.println("\t1 --> Insert Element\n\t 2 --> Show List");
+		choice = sc.nextInt();
+		while(choice ==1 || choice ==2)
+		{
+			if(choice ==1) 
+			{
+				System.out.println("Enter the element to insert: ");
+				int element = sc.nextInt();
+				list.insert(element);
+				System.out.println("\t1 --> Insert Element\n\t 2 --> Show List");
+				choice = sc.nextInt();
+			}
+			
+			if(choice ==2) 
+			{
+				try
+				{
+					list.show();
+				}
+				catch(NullPointerException e)
+				{
+					System.out.println("Empty List");
+				}
+				System.out.println("\t1 --> Insert Element\n\t 2 --> Show List");
+				choice = sc.nextInt();
+				
+			}
+			
+		}
+		
+	}
+
+}

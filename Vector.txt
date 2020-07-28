@@ -1,0 +1,53 @@
+package vectorEx;
+import java.util.*;
+public class VectorEx 
+{
+
+	public static void main(String[] args) 
+	{
+		Vector v1 = new Vector();
+		System.out.println(v1.capacity());
+		for(int loop=0;loop<10;loop++)
+		{
+			v1.addElement(loop+1);
+		}
+		System.out.println(v1.capacity());
+
+		v1.addElement("Vijay");
+		v1.addElement("abcd");
+		v1.addElement("efgh");
+		v1.addElement("Vijay");
+		System.out.println(v1.capacity());
+		System.out.println(v1);
+		
+		Vector v2 = new Vector(10,2);
+		System.out.println(v2.capacity());
+		for(int loop=0;loop<10;loop++)
+		{
+			v2.addElement(loop+1);
+		}
+		System.out.println(v2.capacity());
+		v2.addElement("Vijay");
+		System.out.println(v2.capacity());
+		System.out.println(v2);
+		
+		Vector v3 = new Vector(v1);
+		System.out.println(v3);
+		
+		
+		Enumeration e = v1.elements();
+		while(e.hasMoreElements())
+		{
+			String s1 = "Vijay";
+			if(s1.equals(e.nextElement()))
+			{
+				System.out.println("Name exist");
+			}
+			else
+			{
+				System.out.println("Not exist");
+			}
+		}
+	}
+
+}

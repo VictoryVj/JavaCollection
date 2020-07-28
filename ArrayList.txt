@@ -1,0 +1,69 @@
+package arrayListEx;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+
+
+public class MyArrayList 
+{
+	public static void main(String[] args)
+	{
+		List<String> list = new ArrayList();
+		ArrayList l = new ArrayList();
+		List<Integer> contact = new ArrayList<Integer>();
+		contact.add(12345);
+		contact.add(67891);
+		contact.add(23456);
+		contact.add(78910);
+		
+		ArrayList<String> LastName = new ArrayList<String>();
+		LastName.add("N");
+		LastName.add("N");
+		LastName.add("N");
+		LastName.add("N");
+		LastName.add("Vijay");
+		
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Vijay");
+		names.add("Bhairav");
+		names.add("Pethanna");
+		names.add("abcd");
+		names.add("efgh");
+		names.add("N");
+		names.add("Pethanna");
+		System.out.println(names.get(1));
+		System.out.println(names.indexOf("Pethanna"));
+		System.out.println(names.lastIndexOf("Pethanna"));
+		names.remove(4);
+		System.out.println(names.lastIndexOf("Pethanna"));
+		
+		System.out.println(names.addAll(LastName));
+		
+		System.out.println(names);
+		
+		System.out.println("Size: "+names.size());
+		
+		System.out.println(list.addAll(names));
+		System.out.println(list.addAll(LastName));
+		
+		
+		l.addAll(names);
+		l.addAll(LastName);
+		l.addAll(contact);
+		/*Vector v1 = new Vector(list);
+		Vector v2 = new Vector(names);
+		Vector v3 = new Vector(LastName);
+		Vector v4 = new Vector(contact);
+		System.out.println("\n\n\n"+v1+"\n"+v2+"\n"+v3+"\n"+v4);
+		
+		System.out.println(l);
+		
+		ArrayList al = new ArrayList();
+		al.add(1);
+		al.add("Vijay");
+		System.out.println(al.size());*/
+		
+	}
+
+}

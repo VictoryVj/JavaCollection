@@ -1,0 +1,75 @@
+package doublyLinkedListEx;
+
+//import doublyLinkedListEx.CreateDoublyLinkedList.CreateNode;
+
+public class CreateNode 
+{
+	 int item;  
+	    CreateNode previous;  
+	    CreateNode next;  
+	    public CreateNode(int item) 
+	    {  
+	        this.item = item;  
+	    }
+}
+
+
+
+public class CreateDoublyLinkedList 
+{
+    
+    CreateNode head, tail = null;  
+    public void addNode(int item) 
+    {  
+        CreateNode newNode = new CreateNode(item);  
+        if(head == null) {  
+            head = tail = newNode;  
+            head.previous = null;  
+            tail.next = null;  
+        }  
+        else 
+        {  
+            tail.next = newNode;  
+            newNode.previous = tail;  
+            tail = newNode;  
+            tail.next = null;  
+        }  
+    }  
+    
+    public void printNodes() 
+    {  
+        CreateNode current = head;  
+        if(head == null) 
+        {  
+            System.out.println("Doubly linked list is empty");  
+            return;  
+        }  
+        System.out.println("Nodes of doubly linked list: ");  
+        while(current != null) 
+        {  
+            System.out.print(current.item + " ");  
+            current = current.next;  
+        }  
+    } 
+}
+
+package doublyLinkedListEx;
+
+public class DoublyLinkedListRunner 
+{
+	public static void main(String[] args) 
+	{  
+        //create a DoublyLinkedList object
+		CreateDoublyLinkedList cdll = new CreateDoublyLinkedList();  
+        //Add nodes to the list  
+        cdll.addNode(10);  
+        cdll.addNode(20);  
+        cdll.addNode(30);  
+        cdll.addNode(40);  
+        cdll.addNode(50);  
+   
+        //print the nodes of DoublyLinkedList  
+        cdll.printNodes();  
+    }  
+
+}
